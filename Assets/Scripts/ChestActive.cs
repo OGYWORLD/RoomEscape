@@ -13,8 +13,12 @@ public class ChestActive : MonoBehaviour
     public GameObject OpenChest;
     public GameObject Key;
 
+    public AudioSource openSound;
+
     public void OnSelectEntered(SelectEnterEventArgs args)
     {
+        openSound.Play();
+
         CloseChest.SetActive(false);
         Key.SetActive(false);
         OpenChest.SetActive(true);

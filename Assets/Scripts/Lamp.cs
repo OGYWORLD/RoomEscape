@@ -13,6 +13,8 @@ public class Lamp : MonoBehaviour
     private bool isLight;
     public bool PreConditionChecked { get; set; } = true;
 
+    public AudioSource switchSound;
+
     private void Start()
     {
         lampLight = GetComponentInChildren<Light>();
@@ -24,6 +26,7 @@ public class Lamp : MonoBehaviour
 
     public void LightToggle()
     {
+        switchSound.Play();
         isLight = !isLight;
         lampLight.gameObject.SetActive(isLight);
     }

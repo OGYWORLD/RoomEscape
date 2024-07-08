@@ -9,8 +9,14 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance { get; private set; }
+    public enum Radio
+    {
+        FindPortrait,
+        Corret,
+        Wrong
+    }
 
+    public static GameManager instance { get; private set; }
     public List<string> portraitDialog { get; set; } = new List<string>(); // 액자 라디오 대사 리스트
     public string lampDialog { get; set; } // 램프 라디오 대사
 

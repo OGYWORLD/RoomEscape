@@ -16,6 +16,8 @@ public class CKeyRespawn : MonoBehaviour
     public GameObject keyPrefab; // 열쇠 프리팹
     private bool isGetKey = false; // 열쇠를 가졌는지 여부 체크
 
+    public AudioSource keySound;
+
     private void Update()
     {
         KeyReswapn();
@@ -25,6 +27,7 @@ public class CKeyRespawn : MonoBehaviour
     {
         if (!isGetKey && bookTrans.position.y >= 2f) // 책의 position y값이 2 이상이면 열쇠 리스폰
         {
+            keySound.Play();
             isGetKey = true;
             keyPrefab.transform.position = keyRespawnZone.position;
             keyPrefab.SetActive(true);

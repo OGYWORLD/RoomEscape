@@ -43,6 +43,9 @@ namespace NavKeypad
         private bool displayingResult = false;
         private bool accessWasGranted = false;
 
+        public GameObject player;
+        public Transform finishZone;
+
         private void Awake()
         {
             ClearInput();
@@ -125,6 +128,9 @@ namespace NavKeypad
             onAccessGranted?.Invoke();
             panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
             audioSource.PlayOneShot(accessGrantedSfx);
+
+            // 플레이어 이동
+            player.transform.position = finishZone.position;
         }
 
     }
