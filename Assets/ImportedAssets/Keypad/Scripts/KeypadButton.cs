@@ -17,7 +17,6 @@ namespace NavKeypad
 
         public void PressButton(string value)
         {
-            print("!");
             if (!moving)
             {
                 keypad.AddInput(value);
