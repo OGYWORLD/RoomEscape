@@ -47,7 +47,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_5262C982:
-        m_Texture: {fileID: 2800000, guid: 99f86e511bbb06e43abf42595d9bdc4b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_B6BC853F:
@@ -70,9 +70,13 @@ Material:
     m_Floats:
     - Boolean_A48C4DFA: 0
     - HighlightActive: 0
+    - _ApertureSize: 0.7
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _FeatheringEffect: 0.2
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    m_Colors:
+    - _VignetteColor: {r: 0, g: 0, b: 0, a: 1}
+    - _VignetteColorBlend: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

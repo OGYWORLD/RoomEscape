@@ -16,6 +16,9 @@ public class CPlayTime : MonoBehaviour
 
     public TextMeshProUGUI playTimeTMP;
 
+    public AudioSource bgmPlayer;
+    public AudioClip winBGM;
+
     private bool isEnd = false;
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +26,10 @@ public class CPlayTime : MonoBehaviour
         if(!isEnd)
         {
             isEnd = true;
+
+            bgmPlayer.Stop();
+            bgmPlayer.clip = winBGM;
+            bgmPlayer.Play();
 
             float t = Time.time;
 

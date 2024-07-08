@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
 
-#region 김하은
+#region 김하은(사운드, 상호작용), 오가을(UI)
 #endregion
 
 [RequireComponent(typeof(AudioSource))]
@@ -11,6 +12,8 @@ public class ClickPortrait : MonoBehaviour
 {
     [SerializeField]
     private int FrameNum;
+
+    private bool isSolved;
 
     public PortraitManager manager;
 
@@ -22,33 +25,49 @@ public class ClickPortrait : MonoBehaviour
 
     public AudioSource Audio;
 
+    public TextMeshProUGUI dialog;
+
     public void OnInteract()
     {
-        if (CorrectNum[manager.Now] == FrameNum)
+        if (isSolved || CorrectNum[manager.Now] == FrameNum)
         {
-            Debug.Log("맞음");
-            Audio.clip = CorrectSound;
-            Audio.Play();
-
-            manager.Now++;
-
-            if (manager.Now >= CorrectNum.Length)
+            if (manager.Now >= CorrectNum.Length-1)
             {
-                Debug.Log("다 맞음");
+                isSolved = true;
+                dialog.text = GameManager.instance.lampDialog;
+                StartCoroutine(TextPrint());
+
                 Audio.clip = FinalSound;
                 Audio.Play();
+            }
+            else
+            {
+                dialog.text = GameManager.instance.portraitDialog[2];
+                StartCoroutine(TextPrint());
 
-                manager.Now = 0;
+                Audio.clip = CorrectSound;
+                Audio.Play();
+
+                manager.Now++;
             }
         }
 
         else
         {
-            Debug.Log("틀림");
+            dialog.text = GameManager.instance.portraitDialog[1];
+            StartCoroutine(TextPrint());
+
             Audio.clip = WrongSound;
             Audio.Play();
 
             manager.Now = 0;
         }
+    }
+
+    IEnumerator TextPrint()
+    {
+        yield return new WaitForSeconds(3f);
+
+        dialog.text = "";
     }
 }
