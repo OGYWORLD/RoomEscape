@@ -34,7 +34,7 @@ public class ClickPortrait : MonoBehaviour
             if (manager.Now >= CorrectNum.Length-1)
             {
                 isSolved = true;
-                dialog.text = GameManager.instance.lampDialog;
+                dialog.text = "당신의 처음 위치로 돌아가라.";
                 StartCoroutine(TextPrint());
 
                 Audio.clip = FinalSound;

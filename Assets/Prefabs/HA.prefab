@@ -1460,9 +1460,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrameNum: 3
   manager: {fileID: 320199477}
-  CorrectSound: {fileID: 8300000, guid: a35f6c0ad2837c2428c369abcb8b51d6, type: 3}
-  WrongSound: {fileID: 8300000, guid: 3a0731f826044c549bbab342caf84522, type: 3}
-  FinalSound: {fileID: 8300000, guid: a18f2872575446c49b3ca5fd09115e56, type: 3}
+  CorrectSound: {fileID: 8300000, guid: fef014da299a61c45a34dbe6475881d0, type: 3}
+  WrongSound: {fileID: 8300000, guid: 94c67189525ee334e9cd40f566e0a5f3, type: 3}
+  FinalSound: {fileID: 8300000, guid: 73b0c5987cebac54b83fc39ca90cd4f0, type: 3}
   Audio: {fileID: 320199476}
   dialog: {fileID: 0}
 --- !u!114 &1409850393
@@ -3005,9 +3005,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrameNum: 2
   manager: {fileID: 320199477}
-  CorrectSound: {fileID: 8300000, guid: a35f6c0ad2837c2428c369abcb8b51d6, type: 3}
-  WrongSound: {fileID: 8300000, guid: 3a0731f826044c549bbab342caf84522, type: 3}
-  FinalSound: {fileID: 8300000, guid: a18f2872575446c49b3ca5fd09115e56, type: 3}
+  CorrectSound: {fileID: 8300000, guid: fef014da299a61c45a34dbe6475881d0, type: 3}
+  WrongSound: {fileID: 8300000, guid: 94c67189525ee334e9cd40f566e0a5f3, type: 3}
+  FinalSound: {fileID: 8300000, guid: 73b0c5987cebac54b83fc39ca90cd4f0, type: 3}
   Audio: {fileID: 320199476}
   dialog: {fileID: 0}
 --- !u!114 &2140217288
@@ -3269,6 +3269,7 @@ GameObject:
   - component: {fileID: 4375428723996253112}
   - component: {fileID: 4375428723996253111}
   - component: {fileID: 4375428723996253113}
+  - component: {fileID: 1545871561}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -3320,6 +3321,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fb9486cf2fbe6fc428e47eaae42cdd5d, type: 2}
+  - {fileID: 2100000, guid: 9891d27cdd3cb4147b014da22707e5b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3403,10 +3405,34 @@ MonoBehaviour:
   m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1545871561}
+        m_TargetAssemblyTypeName: CHightObj, Assembly-CSharp
+        m_MethodName: Highlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_LastHoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1545871561}
+        m_TargetAssemblyTypeName: CHightObj, Assembly-CSharp
+        m_MethodName: RemoveHighlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3545,7 +3571,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3c39f67e521ed047a4a90b65604b08e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 61a77b1adb8f96a4f9115adb96e22882, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3631,6 +3657,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1545871561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493048316996576993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ca7d27e8f01be42976bb1d98d5ee42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderer: {fileID: 3132588478550034228}
 --- !u!1 &3819030440450893369
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,9 +4041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrameNum: 4
   manager: {fileID: 320199477}
-  CorrectSound: {fileID: 8300000, guid: a35f6c0ad2837c2428c369abcb8b51d6, type: 3}
-  WrongSound: {fileID: 8300000, guid: 3a0731f826044c549bbab342caf84522, type: 3}
-  FinalSound: {fileID: 8300000, guid: a18f2872575446c49b3ca5fd09115e56, type: 3}
+  CorrectSound: {fileID: 8300000, guid: fef014da299a61c45a34dbe6475881d0, type: 3}
+  WrongSound: {fileID: 8300000, guid: 94c67189525ee334e9cd40f566e0a5f3, type: 3}
+  FinalSound: {fileID: 8300000, guid: 73b0c5987cebac54b83fc39ca90cd4f0, type: 3}
   Audio: {fileID: 320199476}
   dialog: {fileID: 0}
 --- !u!114 &316431531
@@ -4941,9 +4980,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrameNum: 1
   manager: {fileID: 320199477}
-  CorrectSound: {fileID: 8300000, guid: a35f6c0ad2837c2428c369abcb8b51d6, type: 3}
-  WrongSound: {fileID: 8300000, guid: 3a0731f826044c549bbab342caf84522, type: 3}
-  FinalSound: {fileID: 8300000, guid: a18f2872575446c49b3ca5fd09115e56, type: 3}
+  CorrectSound: {fileID: 8300000, guid: fef014da299a61c45a34dbe6475881d0, type: 3}
+  WrongSound: {fileID: 8300000, guid: 94c67189525ee334e9cd40f566e0a5f3, type: 3}
+  FinalSound: {fileID: 8300000, guid: 73b0c5987cebac54b83fc39ca90cd4f0, type: 3}
   Audio: {fileID: 320199476}
   dialog: {fileID: 0}
 --- !u!114 &2020855206

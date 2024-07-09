@@ -489,6 +489,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4177046354630628, guid: 9d012b73caba62246906034d78994c42, type: 3}
   m_PrefabInstance: {fileID: 1548589766}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &230097117 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1886106009, guid: 0a561167f7cfcbe4fb263f3882a2a347, type: 3}
+  m_PrefabInstance: {fileID: 154793501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &265969969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1359,7 +1364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1618,6 +1623,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4534449285516404, guid: 0941535f5a7c0d846a45a6370dc4036b, type: 3}
   m_PrefabInstance: {fileID: 695236724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1498584348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129022687, guid: 0a561167f7cfcbe4fb263f3882a2a347, type: 3}
+  m_PrefabInstance: {fileID: 154793501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1526661292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2447,6 +2463,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1441935690}
+    - target: {fileID: 2035295847332871149, guid: ca9aea8a86e28fa4cbfba48525be7a72, type: 3}
+      propertyPath: playTime
+      value: 
+      objectReference: {fileID: 1498584348}
+    - target: {fileID: 2035295847332871149, guid: ca9aea8a86e28fa4cbfba48525be7a72, type: 3}
+      propertyPath: bgmSource
+      value: 
+      objectReference: {fileID: 230097117}
     - target: {fileID: 2035295847332871149, guid: ca9aea8a86e28fa4cbfba48525be7a72, type: 3}
       propertyPath: finishZone
       value: 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using UnityEngine.Networking;
 using System.IO;
 
 #region ¿À°¡À»
@@ -33,7 +34,46 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        LoadJSON();
+        //LoadJSON();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(LoadJson());
+    }
+
+    IEnumerator LoadJson()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, "Portrait_Dialog.json");
+
+        // Android
+        if (filePath.Contains("://") || filePath.Contains(":///"))
+        {
+            UnityWebRequest www = UnityWebRequest.Get(filePath);
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                string jsonText = www.downloadHandler.text;
+                portraitDialog = JsonConvert.DeserializeObject<List<string>>(jsonText);
+            }
+        }
+        else // Window
+        {
+            if (File.Exists(filePath))
+            {
+                string jsonText = File.ReadAllText(filePath);
+                portraitDialog = JsonConvert.DeserializeObject<List<string>>(jsonText);
+            }
+            else
+            {
+                Debug.LogError("File not found at " + filePath);
+            }
+        }
     }
 
     /// <summary>

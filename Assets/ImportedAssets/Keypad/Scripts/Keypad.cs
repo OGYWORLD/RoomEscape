@@ -46,6 +46,11 @@ namespace NavKeypad
         public GameObject player;
         public Transform finishZone;
 
+        public AudioSource bgmSource;
+        public AudioClip winBGM;
+
+        public TextMeshProUGUI playTime;
+
         private void Awake()
         {
             ClearInput();
@@ -131,6 +136,20 @@ namespace NavKeypad
 
             // 플레이어 이동
             player.transform.position = finishZone.position;
+
+            // 노래 변경
+            bgmSource.Stop();
+            bgmSource.clip = winBGM;
+            bgmSource.Play();
+
+            // 플레이타임 출력
+            float t = Time.time;
+
+            float h = (int)(t / 360);
+            float m = (int)((t % 360) / 60);
+            float s = (int)((t % 360) % 60);
+
+            playTime.text = "" + h + "H " + m + "M " + s + "S";
         }
 
     }

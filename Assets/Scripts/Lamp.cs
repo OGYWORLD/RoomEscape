@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#region Inhye
+#region ¿ìÀÎÇý
 #endregion
 
 public class Lamp : MonoBehaviour
