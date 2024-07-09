@@ -25,12 +25,15 @@ public class CKeyRespawn : MonoBehaviour
 
     void KeyReswapn()
     {
-        if (!isGetKey && bookTrans.position.y >= 2f) // 책의 position y값이 2 이상이면 열쇠 리스폰
+        if (GameManager.instance.curStage == GameManager.Stage.Nothing)
         {
-            keySound.Play();
-            isGetKey = true;
-            keyPrefab.transform.position = keyRespawnZone.position;
-            keyPrefab.SetActive(true);
+            if (!isGetKey && bookTrans.position.y >= 2f) // 책의 position y값이 2 이상이면 열쇠 리스폰
+            {
+                keySound.Play();
+                isGetKey = true;
+                keyPrefab.transform.position = keyRespawnZone.position;
+                keyPrefab.SetActive(true);
+            }
         }
     }
 

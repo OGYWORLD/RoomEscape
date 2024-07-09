@@ -26,9 +26,14 @@ public class Lamp : MonoBehaviour
 
     public void LightToggle()
     {
-        switchSound.Play();
-        isLight = !isLight;
-        lampLight.gameObject.SetActive(isLight);
+        if(GameManager.instance.curStage == GameManager.Stage.Portrait)
+        {
+            switchSound.Play();
+            isLight = !isLight;
+            lampLight.gameObject.SetActive(isLight);
+
+            GameManager.instance.curStage = GameManager.Stage.Light;
+        }
     }
 
     private bool CheckLightOnCorrectTime()

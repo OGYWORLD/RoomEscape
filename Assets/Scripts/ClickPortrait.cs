@@ -29,38 +29,43 @@ public class ClickPortrait : MonoBehaviour
 
     public void OnInteract()
     {
-        if (isSolved || CorrectNum[manager.Now] == FrameNum)
+        if(GameManager.instance.curStage == GameManager.Stage.Apple)
         {
-            if (manager.Now >= CorrectNum.Length-1)
+            if (isSolved || CorrectNum[manager.Now] == FrameNum)
             {
-                isSolved = true;
-                dialog.text = "당신의 처음 위치로 돌아가라.";
-                StartCoroutine(TextPrint());
+                if (manager.Now >= CorrectNum.Length - 1)
+                {
+                    isSolved = true;
+                    dialog.text = "당신의 처음 위치로 돌아가라.";
+                    StartCoroutine(TextPrint());
 
-                Audio.clip = FinalSound;
-                Audio.Play();
+                    Audio.clip = FinalSound;
+                    Audio.Play();
+
+                    GameManager.instance.curStage = GameManager.Stage.Portrait;
+                }
+                else
+                {
+                    dialog.text = GameManager.instance.portraitDialog[2];
+                    StartCoroutine(TextPrint());
+
+                    Audio.clip = CorrectSound;
+                    Audio.Play();
+
+                    manager.Now++;
+                }
             }
+
             else
             {
-                dialog.text = GameManager.instance.portraitDialog[2];
+                dialog.text = GameManager.instance.portraitDialog[1];
                 StartCoroutine(TextPrint());
 
-                Audio.clip = CorrectSound;
+                Audio.clip = WrongSound;
                 Audio.Play();
 
-                manager.Now++;
+                manager.Now = 0;
             }
-        }
-
-        else
-        {
-            dialog.text = GameManager.instance.portraitDialog[1];
-            StartCoroutine(TextPrint());
-
-            Audio.clip = WrongSound;
-            Audio.Play();
-
-            manager.Now = 0;
         }
     }
 

@@ -13,5 +13,7 @@ public class CoinActive : MonoBehaviour
     public void OnSelectEntered(SelectEnterEventArgs args)
     {
         Coin.SetActive(false);
+
+        GameManager.instance.curStage = GameManager.Stage.Apple;
     }
 }

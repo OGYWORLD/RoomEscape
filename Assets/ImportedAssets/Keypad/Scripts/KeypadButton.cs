@@ -17,7 +17,7 @@ namespace NavKeypad
 
         public void PressButton(string value)
         {
-            if (!moving)
+            if (GameManager.instance.curStage == GameManager.Stage.Light && !moving)
             {
                 keypad.AddInput(value);
                 StartCoroutine(MoveSmooth());
