@@ -15,7 +15,7 @@
 
 * 실행 환경: Oculus Quest2
 
-* 시연 영상: 
+* 시연 영상: https://youtu.be/VAyXW2UYli8
 
 <hr/>
 
